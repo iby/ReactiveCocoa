@@ -45,7 +45,7 @@ jobs:
             SCHEME=ReactiveCocoa-iOS
             ;;
           "macOS")
-            DESTINATION="platform=macOS,arch=x86_64"
+            DESTINATION="platform=macOS"
             SCHEME=ReactiveCocoa-macOS
             ;;
           *)
@@ -53,7 +53,7 @@ jobs:
             exit 1
             ;;
           esac
-          xcodebuild clean ${ACTION} \
+          xcodebuild clean "${ACTION}" \
             -destination "${DESTINATION}" \
             -scheme "${SCHEME}" \
             -workspace ReactiveCocoa.xcworkspace \
